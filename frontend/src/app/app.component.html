@@ -1,0 +1,50 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+      <div class="card bg-dark my-5">
+        <h2 class="card-header text-center text-white py-3">Welcome to Find Tester Application</h2>
+        <div class="card-body">
+          <div class="row">
+            <div class="card-title col-lg-12 text-center text-white py-3 h3">Choose your filters:</div>
+          </div>
+          <div class="flex-column">
+            <div class="row mb-5">
+              <div class="col-lg-2"></div>
+              <div class="col-lg-2 h4">
+                <span class="card-text text-white">Countries: </span>
+              </div>
+              <div class="col-lg-7 btn-block">
+                <div class="btn-group align-content-center text-center col-lg-3" *ngFor="let country of countries"
+                     (click)="toggleCountry($event)">
+                    <p class="btn-group btn-block"><button class="btn btn-primary mr-2 px-5" type="button"> {{ country }}</button></p>
+                </div>
+              </div>
+            </div>
+              <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-2 h4">
+                  <span class="card-text text-white">Devices: </span>
+                </div>
+                <div class="col-lg-7 btn-block">
+                  <div class="btn-group align-content-center text-center col-lg-3" *ngFor="let device of devices"
+                       (click)="toggleDevice($event)">
+                      <p class="btn-group btn-block">
+                        <button class="btn btn-primary btn-block mr-2" type="button"> {{ device }}</button>
+                      </p>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        <ul class="card-footer text-center list-inline py-3">
+          <li class="list-inline-item">
+            <button class="btn btn-danger btn-lg" (click)="onFindTesterClick()">Find Testers</button>
+          </li>
+        </ul>
+      </div>
+      <app-testers-table [testers]="testers$ | async"></app-testers-table>
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>
