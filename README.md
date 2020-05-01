@@ -33,6 +33,9 @@ Frontend:
 <br>
 <br>
 
+4 ) Application is available under: <br>
+ Frontend:<b> http://localhost:4200 </b>  <br>
+ Backend: <b>http://localhost:8080</b>
 
 #####Possible problems:
 1. Npm error during compilation (Angular 9 and npm is not too stable) - try to delete whole node_modules and
